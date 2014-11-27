@@ -95,6 +95,8 @@ void FullyAssociativeCache::LRUReplace (const int memoryTag)
 		{
 			leastUsedTimes = cacheFlags[i].LRUtag ++;
 			leastUsedIndex = i;
+		} else {
+			++ cacheFlags[i].LRUtag;
 		}
 	
 	cacheFlags[leastUsedIndex].tag = memoryTag;	// Replace It

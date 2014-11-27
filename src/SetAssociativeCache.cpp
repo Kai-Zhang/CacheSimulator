@@ -99,6 +99,8 @@ void SetAssociativeCache::LRUReplace (const int groupIndex, const int memoryTag)
 		{
 			leastUsedTimes = cacheFlags[groupIndex].blocks[i].LRUtag ++;
 			leastUsedIndex = i;
+		} else {
+			++ cacheFlags[groupIndex].blocks[i].LRUtag;
 		}
 	
 	cacheFlags[groupIndex].blocks[leastUsedIndex].tag = memoryTag;	// Replace It
