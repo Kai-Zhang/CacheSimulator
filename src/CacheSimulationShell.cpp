@@ -9,7 +9,7 @@ void SimulationShell::start ()
 	showGreetings ();
 	initializeCache ();
 	char loopContinue = 'Y';
-	while ( loopContinue == 'Y' )
+	while ( loopContinue == 'Y' || loopContinue == 'y' )
 	{
 		dataProcess ();
 		showCacheData ();

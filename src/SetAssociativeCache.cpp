@@ -30,6 +30,7 @@ void SetAssociativeCache::read (const unsigned int address)
 			isAllocated = true;
 			if ( LRUselected )
 				LRUProcess (groupIndex,i);
+			break;
 		}
 	}
 
@@ -68,6 +69,7 @@ void SetAssociativeCache::write (const unsigned int address)
 			isAllocated = true;
 			if ( LRUselected )
 				LRUProcess (groupIndex,i);
+			break;
 		}
 	}
 
@@ -112,5 +114,5 @@ void SetAssociativeCache::RandomReplace (const int groupIndex, const int memoryT
 	int randIndex = rand() % WAY_NUMBER;
 
 	cacheFlags[groupIndex].blocks[randIndex].tag = memoryTag;
-	LRUProcess (groupIndex,randIndex);
+//	LRUProcess (groupIndex,randIndex);
 }

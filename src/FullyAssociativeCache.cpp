@@ -28,6 +28,7 @@ void FullyAssociativeCache::read (const unsigned int address)
 			isAllocated = true;
 			if ( LRUselected )
 				LRUProcess (i);
+			break;
 		}
 	}
 
@@ -64,6 +65,7 @@ void FullyAssociativeCache::write (const unsigned int address)
 			isAllocated = true;
 			if ( LRUselected )
 				LRUProcess (i);
+			break;
 		}
 	}
 
@@ -108,5 +110,5 @@ void FullyAssociativeCache::RandomReplace (const int memoryTag)
 	int randIndex = rand() % numOfBlocks;
 
 	cacheFlags[randIndex].tag = memoryTag;
-	LRUProcess (randIndex);
+//	LRUProcess (randIndex);
 }
